@@ -27,10 +27,6 @@ Migración de una aplicación JavaScript a Angular con funcionalidad CRUD comple
 - npm (Node Package Manager)
 
 ### Pasos para ejecutar
-Clonar el repositorio:
-git clone https://github.com/Aaronnbravo/AngularFinal.git
-cd AngularFinal
-
 Instalar dependencias:
 npm install
 
