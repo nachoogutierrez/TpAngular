@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <h2>Lista de Estudiantes</h2>
+
+  <!-- Formulario para agregar estudiante -->
+  <app-student-form (studentAdded)="onStudentAdded()"></app-student-form>
+
+  <!-- Tabla de estudiantes -->
+  <table class="table table-striped mt-4">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>DNI</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students" 
+          (click)="selectStudent(student)"
+          [class.table-active]="selectedStudent?.id === student.id"
+          style="cursor: pointer;">
+        <td>{{ student.id }}</td>
+        <td>{{ student.dni }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.email }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" 
+                  (click)="deleteStudent(student.id!); $event.stopPropagation()">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Detalles del estudiante seleccionado -->
+  <div *ngIf="selectedStudent" class="mt-4">
+    <app-student-edit 
+      [student]="selectedStudent"
+      (studentUpdated)="onStudentUpdated()"
+      (cancelEdit)="selectedStudent = undefined">
+    </app-student-edit>
+  </div>
+</div>
