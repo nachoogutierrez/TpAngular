@@ -1,60 +1,101 @@
-# TpAngularMigracion
+# 🎓 TP Angular - Gestión de Estudiantes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+## 📋 Descripción
+Migración de una aplicación JavaScript a Angular con funcionalidad CRUD completa para la gestión de estudiantes. Trabajo práctico entregable para la materia de Desarrollo Web.
 
-## Development server
+## 🚀 Características
+- ✅ **Listar estudiantes** - Visualización en tabla con diseño responsive
+- ✅ **Agregar estudiantes** - Formulario de alta con validaciones
+- ✅ **Editar estudiantes** - Modificación de datos en tiempo real
+- ✅ **Eliminar estudiantes** - Borrado con confirmación
+- ✅ **Diseño profesional** - Bootstrap 5 para interfaz moderna
+- ✅ **API REST completa** - JSON Server como backend simulado
 
-To start a local development server, run:
+## 🛠️ Tecnologías Utilizadas
+- **Angular 17+** - Framework principal con componentes standalone
+- **TypeScript** - Lenguaje de programación
+- **Bootstrap 5** - Framework de estilos y componentes UI
+- **JSON Server** - API REST simulada para desarrollo
+- **RxJS** - Manejo de observables y programación reactiva
+- **Angular HttpClient** - Consumo de APIs REST
 
-```bash
+## 📥 Instalación y Configuración
+
+### Prerrequisitos
+- Node.js 18+ 
+- Angular CLI 17+
+- npm (Node Package Manager)
+
+### Pasos para ejecutar
+Clonar el repositorio:
+git clone https://github.com/Aaronnbravo/AngularFinal.git
+cd AngularFinal
+
+Instalar dependencias:
+npm install
+
+Instalar JSON Server globalmente (si no lo tienes):
+npm install -g json-server
+
+Ejecutar JSON Server (Terminal 1):
+json-server --watch db.json --port 3000
+La API estará disponible en: http://localhost:3000/students
+
+Ejecutar Angular (Terminal 2):
 ng serve
-```
+La aplicación estará disponible en: http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🏗️ Estructura del Proyecto
 
-## Code scaffolding
+AngularFinal/
+├── src/
+│ ├── app/
+│ │ ├── components/
+│ │ │ ├── student-list/ # Lista principal de estudiantes
+│ │ │ ├── student-form/ # Formulario de creación
+│ │ │ └── student-edit/ # Formulario de edición
+│ │ ├── models/
+│ │ │ └── student.model.ts # Interface del modelo Student
+│ │ ├── services/
+│ │ │ └── api.service.ts # Servicio para consumo de API
+│ │ ├── app.component.ts # Componente raíz
+│ │ ├── app.config.ts # Configuración de la aplicación
+│ │ └── app.routes.ts # Configuración de rutas
+│ ├── assets/
+│ └── environments/
+├── db.json # Base de datos simulada
+├── angular.json # Configuración de Angular
+└── package.json # Dependencias del proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📡 API Endpoints
+La aplicación consume los siguientes endpoints:
+- GET /students - Obtener todos los estudiantes
+- POST /students - Crear nuevo estudiante
+- PATCH /students/:id - Actualizar estudiante existente
+- DELETE /students/:id - Eliminar estudiante
 
-```bash
-ng generate component component-name
-```
+## 🎯 Funcionalidades Implementadas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Gestión de Estudiantes
+- **Visualización**: Tabla con todos los estudiantes registrados
+- **Creación**: Formulario con campos: DNI, Apellido, Nombre, Email
+- **Edición**: Modal de edición con pre-carga de datos
+- **Eliminación**: Botón de eliminar con confirmación
+- **Selección**: Click en fila para ver detalles completos
 
-```bash
-ng generate --help
-```
+### Características Técnicas
+- **Arquitectura**: Componentes standalone de Angular
+- **Estado**: Manejo reactivo del estado de la aplicación
+- **Validaciones**: Validación de formularios en tiempo real
+- **Manejo de errores**: Alertas para errores de API
+- **Responsive**: Diseño adaptable a diferentes dispositivos
 
-## Building
+## 👨‍💻 Autor
+**Ignacio Gutierrez**
+## 📄 Notas
+- Este proyecto fue desarrollado como trabajo práctico académico
+- Utiliza una API simulada (JSON Server) para desarrollo
+- La estructura sigue las mejores prácticas de Angular
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
 
